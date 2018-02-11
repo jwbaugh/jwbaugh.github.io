@@ -1,1 +1,182 @@
-Hello world
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+h2 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+
+h3 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+
+blockquote {
+    font-family: UniversLight;
+    color: #000000;
+}
+
+a:link {
+    color: #CC0000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #CC0000;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+</style>
+
+<title>Alloy Case Studies</title>
+</head>
+
+<body>
+
+<script src="https://cdn.ncsu.edu/brand-assets/utility-bar/ub.php"></script>
+
+<blockquote>
+
+<br>
+
+<h2>Alloy Case Studies</h2>
+
+<blockquote>
+
+<h3>Hardy Cross Method of Moment Distribution</h3>
+
+State-Based Formal Methods in Scientific Computation, by 
+John Baugh and Tristan Dyer, <em>ABZ 2018</em>, submitted
+
+<br></p>
+
+<button class="accordion">&#x25B6; Alloy Files</button>
+<div class="panel">
+<p>
+
+<b>4. Illustrative Example</b> <br>
+Specification and refinement of the Hardy Cross method of moment
+distribution<br>
+<a href="./hardy/hcm.als" target="_blank">hcm.als</a> <p>
+
+</div>
+
+<h3>Hurricane Storm Surge</h3>
+
+Formal Methods and Finite Element Analysis of Hurricane Storm Surge: A
+Case Study in Software Verification, by John Baugh and Alper
+Altuntas, <em>Science of Computer Programming</em>, in press,
+<a href="https://doi.org/10.1016/j.scico.2017.08.012">
+https://doi.org/10.1016/j.scico.2017.08.012</a>
+
+<br></p>
+
+<button class="accordion">&#x25B6; Alloy Files</button>
+<div class="panel">
+<p>
+
+<b>3. Statics: Representing a mesh</b> <br>
+Model the topology of meshes that are made up of triangles and vertices<br>
+<a href="./adcirc/mesh.als" target="_blank">mesh.als</a> <p>
+
+<b>4. Dynamics: Wetting and drying</b> <br>
+A model of ADCIRC's wetting and drying algorithm<br>
+<a href="./adcirc/wetdry.als" target="_blank">wetdry.als</a> <p>
+
+<b>5. Full and subdomain runs</b> <br>
+Compare full and subdomain runs of the wet-dry algorithm<br>
+<a href="./adcirc/fullsub.als" target="_blank">fullsub.als</a> <p>
+
+<em>5.2. An alternative approach for full and subdomain runs</em> <br>
+Compare full and subdomain runs: an alternative approach<br>
+<a href="./adcirc/fullsub2.als" target="_blank">fullsub2.als</a> <p>
+
+<b>6. Role in understanding empirical algorithms</b> <br>
+Question: why would an element with three wet nodes be dry?<br>
+<a href="./adcirc/question.als" target="_blank">question.als</a> <p>
+
+</p>
+</div>
+
+
+
+</blockquote>
+
+<br><p>
+
+<em>Last updated: Sun Feb 4, 2018 by John Baugh</em>
+
+</blockquote>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        var rs = "\u25B6"
+        var ds = "\u25BC"
+        if (panel.style.display === "block") {
+            this.innerHTML = rs.concat(this.innerHTML.substr(1));
+            panel.style.display = "none";
+        } else {
+            this.innerHTML = ds.concat(this.innerHTML.substr(1));
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
+
+<br><p><br>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11621689; 
+var sc_invisible=1; 
+var sc_security="c7f12050"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11621689/0/c7f12050/1/" alt="Web
+Analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+
+</body>
+
+</html>
+
