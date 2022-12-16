@@ -1,0 +1,103 @@
+<html>
+<head name="keywords" value="vitri distributed">
+<title>Vitri</title>
+</head>
+
+<body>
+
+<blockquote>
+
+<br>
+
+<h3>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+Vitri -  A high performance system for heuristic optimization
+</font>
+</h3>
+
+Vitri is an object-oriented framework implemented in Java for
+high-performance distributed computing. Using Vitri, applications can
+engage in cooperative problem solving by dividing their tasks among
+heterogeneous clusters of workstations and PCs. Vitri's features
+include basic support for distributed computing and communication, as
+well as visual tools for evaluating run-time performance, and modules
+for heuristic optimization. It balances loads dynamically using a
+client-side task pool, allows for the addition or removal of servers
+during a run, and provides fault tolerance transparently for servers
+and networks. Among its more powerful features are modules for
+heuristic optimization and decision support tools such as MGA, a
+formal approach for generating alternatives. <p>
+
+Vitri's capabilities also include an asynchronous global-parallel
+genetic algorithm that is particularly suited for coarse-grained tasks
+executing on processors with large variations in processor speeds. By
+using dataflow techniques, in which computations are explicitly based
+on the availability and forwarding of data, the usual
+end-of-generation synchronization points are removed from the
+algorithm.  Vitri has been used for design and optimization in such
+diverse areas as air quality management, water distribution systems,
+vehicle routing and scheduling, and structural optimization.  Results
+of these studies indicate the adaptability of Vitri to various
+problems and its utility as a tool for building engineering decision
+support systems. <p>
+
+<h4>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+Releases
+</font>
+</h4>
+
+A new implementation of Vitri (Vitri 2.0) is now available for
+distribution.  Source code is now included in this release, which may
+be freely distributed.  In addition, the original release of Vitri
+(without source code) is still available and can be found below.
+
+<ul>
+<li><a href="vitri-2.0/">Vitri 2.0</a> <p>
+<li><a href="vitri-1.0/">Vitri 1.0</a>
+</ul>
+
+<h4>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+References
+</font>
+</h4>
+
+<ul>
+
+<li>Asynchronous genetic algorithms for heterogeneous networks using
+coarse-grained dataflow, John Baugh and Sujay V. Kumar.  In
+<em>Proceedings of the Genetic and Evolutionary Computation Conference
+(GECCO),</em> pp. 730-741, 2003. (full paper in <a
+href="gecco03.pdf">pdf</a>) <p>
+
+<li><em>Vitri: a generic framework for engineering decision support
+systems on heterogeneous computer networks,</em> Sujay V. Kumar,
+Ph.D. Thesis, North Carolina State University, 2002
+(available <a href="http://www.lib.ncsu.edu/etd/public/etd-351892611022560/etd-title.html">online</a>). <p>
+
+<li>Vitri: A framework for environmental decision support on
+heterogeneous computer networks, Sujay V. Kumar, Troy Doby, John
+Baugh, Downey Brill, Ranji Ranjithan.  In <em>Proceedings of the 2001
+World Water and Environmental Resources Congress,</em> ASCE, 2001. <p>
+
+<li><em>An object-oriented framework for distributed genetic
+algorithms,</em> Raghu N. Kurlagunda.  M.S. Thesis, North Carolina
+State University, 1999.
+
+</ul>
+
+
+<h4>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+Contact Us
+</font>
+</h4>
+
+For more information about Vitri, contact john dot baugh at ncsu dot edu.
+
+</blockquote>
+
+</body>
+
+</html>

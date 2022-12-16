@@ -1,0 +1,29 @@
+#This is the input file with the parameters specified. 
+#Name of the organism class used (Full Name)
+Organism class 			: KnapsackOrganism
+#Name of the fitness class used (Full Name)	
+Fitness class 	 		: KnapsackFitness 
+#Number of Generations
+Number of generations 		: 200
+#Size of a single population.
+Population size 		: 100
+#
+Crossover percentage [0-1]	: 0.75
+#
+Select fittest percentage [0-1] : 0.75
+#
+Mutation rate 	[0-1]		: 0.005
+#
+Elitism level [0-2] 		: 1
+#
+Print level[0-2]		: 2  
+#This feature must be enabled if you want to restart from a certain stage. 
+Save population [true/false]	: false
+#Save to directory 		: 
+Graphics [true-false]		: false
+Mga solutions [true/false]	: false
+#If mga solns are not warranted, this will be ignored.
+Number of mga solutions		: 4
+Niching percentage [0-1] 	: 0.60 
+Sharing percentage[0-1]	 	: 1
+

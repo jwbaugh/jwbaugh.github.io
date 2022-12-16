@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<link href="https://cdn.ncsu.edu/brand-assets/fonts/include.css"
+rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+h2 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+h3 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+blockquote {
+    font-family: UniversLight;
+    color: #000000;
+}
+a:link {
+    color: #CC0000;
+    text-decoration: none;
+}
+a:visited {
+    color: #CC0000;
+}
+</style>
+
+<title>Alloy Models</title>
+</head>
+
+<body>
+
+<script src="https://cdn.ncsu.edu/brand-assets/utility-bar/ub.php"></script>
+
+<blockquote>
+
+<br>
+
+<h2>Alloy Models</h2>
+
+<blockquote>
+Formal Methods and Finite Element Analysis of Hurricane Storm Surge: A
+Case Study in Software Verification, by John Baugh and Alper
+Altuntas, to appear in <em>Science of Computer Programming</em>. <p>
+
+<b>From the paper:</b><p>
+
+<blockquote>
+<b>3. Statics: Representing a mesh</b> <br>
+Model the topology of meshes that are made up of triangles and vertices<br>
+<a href="./mesh.als">mesh.als</a> <p>
+
+<b>4. Dynamics: Wetting and drying</b> <br>
+A model of ADCIRC's wetting and drying algorithm<br>
+<a href="./wetdry.als">wetdry.als</a> <p>
+
+<b>5. Full and subdomain runs</b> <br>
+Compare full and subdomain runs of the wet-dry algorithm<br>
+<a href="./fullsub.als">fullsub.als</a> <p>
+
+<em>5.2. An alternative approach for full and subdomain runs</em> <br>
+Compare full and subdomain runs: an alternative approach<br>
+<a href="./fullsub2.als">fullsub2.als</a> <p>
+
+<b>6. Role in understanding empirical algorithms</b> <br>
+Question: why would an element with three wet nodes be dry?<br>
+<a href="./question.als">question.als</a> <p>
+
+</blockquote>
+
+</blockquote>
+
+<br><p>
+
+<em>Last updated: Tue Aug 8, 2017</em>
+
+</blockquote>
+
+</body>
+
+</html>

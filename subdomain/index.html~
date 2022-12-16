@@ -1,0 +1,164 @@
+<html>
+
+<head>
+<link href="https://cdn.ncsu.edu/brand-assets/fonts/include.css"
+rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+h2 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+h3 {
+    font-family: UniversRoman;
+    color: #CC0000;
+}
+blockquote {
+    font-family: UniversLight;
+    color: #000000;
+}
+a:link {
+    color: #CC0000;
+    text-decoration: none;
+}
+a:visited {
+    color: #CC0000;
+}
+</style>
+
+<title>Subdomain Modeling in ADCIRC</title>
+</head>
+
+<body>
+
+<script src="https://cdn.ncsu.edu/brand-assets/utility-bar/ub.php"></script>
+
+<blockquote>
+
+<br>
+
+<h2>Subdomain Modeling in ADCIRC</h2>
+
+<blockquote>
+What is it?  An exact reanalysis technique for storm surge and tides
+that enables the assessment of local <em>subdomain</em> changes with
+less computational effort than would be required by a complete
+resimulation of the full domain. So long as the subdomain is large
+enough to fully contain the altered hydrodynamics, changes may be made
+and simulations performed within it without the need to calculate new
+boundary values.
+
+<br><br>
+
+Subdomain modeling is now built into the official
+<a href="http://adcirc.org">ADCIRC</a> release, beginning with v51.42
+(as of Jan 28, 2015).
+</blockquote>
+
+
+<h4>Subdomain ADCIRC+SWAN v53</h4>
+
+<blockquote>
+The user guide and latest scripts are available from <b>github</b>:
+<ul>
+<li> <a href="https://github.com/alperaltuntas/subdomainPy">
+https://github.com/alperaltuntas/subdomainPy</a> <p>
+</ul>
+
+User guide: <a href="sa-guide-17.pdf">sa-guide-17.pdf</a> <br>
+Python 2 scripts: <a href="sa-scripts-17.tar.gz">sa-scripts-17.tar.gz</a>
+<ul>
+<li> Subdomain modeling works with both ADCIRC and coupled ADCIRC+SWAN runs.
+<li> A remapping script is now included for subdomains whose boundary
+ node numbers differ from those of the full domain.
+</ul>
+</blockquote>
+
+<!--
+<h4>NCSU Subdomain ADCIRC branch</h4>
+
+<blockquote>
+<a href="https://adcirc.renci.org/svn/adcirc/branches/ncsu-subdomain/">
+https://adcirc.renci.org/svn/adcirc/branches/ncsu-subdomain/</a>
+(based on v. 51.14)
+</blockquote>
+-->
+
+<h4>Other tools for working with subdomains</h4>
+
+<blockquote>
+Web-based interface:
+<a href="http://adcirc.io">
+http://adcirc.io</a> <br>
+SMT documentation and source:
+<a href="https://github.com/atdyer/SMT">
+https://github.com/atdyer/SMT</a> <br>
+Windows version:
+<a href="http://www4.ncsu.edu/~atdyer/smt-windows/">
+http://www4.ncsu.edu/~atdyer/smt-windows/</a>
+</blockquote>
+
+<h4>References</h4>
+
+<ol>
+<li> Baugh, J., Altuntas, A., Dyer, T., & Simon, J. (2015). An exact
+reanalysis technique for storm surge and tides in a geographic region
+of interest. <em>Coastal Engineering, 97,</em> 60-77.
+<a href="http://dx.doi.org/10.1016/j.coastaleng.2014.12.003">
+http://dx.doi.org/10.1016/j.coastaleng.2014.12.003</a>
+(<a href="..//papers/baugh-ceng-2015.pdf">pdf</a>)
+<p>
+<li>Dyer, T., & Baugh, J. (2016). SMT: An interface for localized
+storm surge modeling. <em>Advances in Engineering Software, 92,</em>
+27-39.
+<a href="http://dx.doi.org/10.1016/j.advengsoft.2015.10.003">
+http://dx.doi.org/10.1016/j.advengsoft.2015.10.003</a>
+(<a href="../papers/dyer-ades-2016.pdf">pdf</a>)
+<p>
+<li>Baugh, J., & Altuntas, A. (2016). Modeling a discrete wet-dry
+algorithm for hurricane storm surge in Alloy. In ABZ 2016, LNCS 9675:
+International Conference on Abstract State Machines, Alloy, B, TLA,
+VDM, and Z (pp. 256-261). Springer International Publishing.
+<a href="http://dx.doi.org/10.1007/978-3-319-33600-8_18">
+http://dx.doi.org/10.1007/978-3-319-33600-8_18</a>
+(<a href="../papers/baugh-abz-2016.pdf">pdf</a>)
+<p>
+<li> Dyer, A. T. (2013). An interface for subdomain modeling using a
+  novel range search algorithm for extracting arbitrary shapes
+  (Master's thesis).  NC State University, Raleigh, NC.  Retrieved
+  from
+<a href="http://www.lib.ncsu.edu/resolver/1840.16/9329">
+http://www.lib.ncsu.edu/resolver/1840.16/9329</a>
+<p>
+<li> Altuntas, A. (2012). Downscaling storm surge models for
+  engineering applications (Master's thesis). NC State University,
+  Raleigh, NC.  Retrieved from
+<a href="http://www.lib.ncsu.edu/resolver/1840.16/8035">
+http://www.lib.ncsu.edu/resolver/1840.16/8035</a>
+<p>
+<li> Simon, J. S. (2011). A Computational approach for local storm
+  surge modeling (Master's thesis). NC State University, Raleigh, NC.
+  Retrieved from
+<a href="http://www.lib.ncsu.edu/resolver/1840.16/7179">
+http://www.lib.ncsu.edu/resolver/1840.16/7179</a>
+</ol>
+
+<h4>Contact</h4>
+
+<blockquote>
+For more information about subdomain modeling in ADCIRC, contact
+<a href="https://www.ccee.ncsu.edu/people/jwb/">John Baugh</a> at
+NC State University.
+</blockquote>
+
+<br><p>
+
+<em>Last updated: Mon May 8, 2017</em>
+
+</blockquote>
+
+<br>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>Distributed computing guide</title>
+</head>
+
+<body>
+ 
+<blockquote>
+
+<h3>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+Distributed Computing Guide
+</font>
+</h3>
+
+There are two sections on this tutorial. The first section describes
+how you can hook up your own program (which I assume has some steps
+which are independent of each other and hence can be distributed) to
+Vitri and use the distributed computing power of a network or
+workstations.  The distributed platform is implemented as a
+client-server model. Vitri uses a "pool of tasks" paradigm for
+automatic load balancing. The client (master) processor maintains the
+main program and the independent tasks are carried out by the servers
+(slaves). <p>
+
+The class <code>sdt.dist.Program</code> provides an abstraction of a
+distributed program. This class contains 3 methods. The use of this
+class is explained below using a simple program example. Lets say the
+task in hand is to multiply numbers from 0 to 99 by 100 and sum each
+result. <p>
+
+<h4>Step 1: Identification of parallel steps</h4>
+
+<pre>
+    int sum = 0;  
+    for (int i=0; i<100; i++){
+        int ii = i*100;         // independent step
+        sum+=ii;
+    }   
+</pre>
+The step inside the loop is obviously independent of other
+(multiplication) calculations.
+
+<h4>Step 2: Extending <code>sdt.dist.Program</code> class</h4>
+
+Let's say we want to implement the distributed version of this
+program.  We will have to write a class which extends
+<code>sdt.dist.Program</code> say <code>SimpleExample.java</code> as
+shown below.
+<pre>
+import sdt.dist.*;
+import sdt.net.*;
+
+public class SimpleExample extends Program{
+  
+    public SimpleExample() {}
+
+    public Object run(boolean distributed){
+        Job[] t1 = new Job[100];
+        double sum = 0;
+        for(int i=0;i<100;i++){
+            //created the task
+            ExampleTaskObject t = new ExampleTaskObject(i);
+            ExampleResultObject r = new ExampleResultObject();
+            //added the task to the pool
+            t1[i]= addJob(t, r, "sdt.dist.ExampleTaskObject","sdt.dist.ExampleResultObject");
+        }
+        for(int i=0;i<100;i++){
+            block(t1[i]);
+        }
+        //get the result back and set it.
+        for(int i=0;i<100;i++){
+            sum+=((ExampleResultObject)t1[i].getOutput()).output;
+        }
+        System.out.println("Sum "+sum);
+        return null;
+    }
+}
+</pre>
+
+<code>SimpleExample.java</code> overrides the <code>run(boolean
+distributed)</code> method defined in <code>sdt.dist.Program.</code>
+We create a number of jobs and place them in a distributed pool. The
+connected servers get the jobs present in the pool one by one and
+execute them, and return the result. <p>
+
+We have to wrap the tasks to be distributed and the results we obtain
+using two interfaces, namely <code>sdt.net.Task</code> and
+<code>sdt.net.Result.</code> In the run method, we first create 100
+jobs (<code>sdt.net.Job</code>) . Each job consists of the input task
+and the expected result). <code>ExampleTaskObject.java</code>
+implements the Task object for this particular application and
+<code>ExampleResultObject.java</code> implements the Result object
+. Once you have created the input task, place them in the pool of
+tasks by using the method <code>addJob.</code> The block method can be
+used to make the program wait for the computation of a particular task
+to be returned. Once all the computaions are done, the sum is
+calculated by summing up each calculation. <p>
+
+<code>ExampleTaskObject</code> is a wrapper class around the input
+value. Here the input is just a number to be multiplied by 100.  The
+calculation is implemented in the method <code>runTask().</code> The
+result of the evaluation should be returned using the wrapper
+<code>ExampleResultObject.java</code>.
+
+<pre>
+//ExampleTaskObject.java
+
+import java.io.*;
+import sdt.net.*;
+
+public class ExampleTaskObject implements Task{
+    double input ;
+
+    public ExampleTaskObject(){
+        this.input = 0;
+    }
+
+    public ExampleTaskObject(double d){
+        this.input = d;
+    }
+
+    public Result runTask(){
+        return new ExampleResultObject(100*input);
+    }
+
+    public void setResult(Result output) {}
+
+    public Object optimize(){
+        return null;
+    }
+
+    public void writeSerializable(ObjectOutputStream out){
+        try{
+            out.writeObject(new Double(input));
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.exit(0);
+        }
+    }
+
+    public Object readSerializable(ObjectInputStream in){
+        double d = 0;
+        try{
+            d = ((Double)in.readObject()).doubleValue();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.exit(0);
+        }
+        return new ExampleTaskObject(d);
+    }
+}
+</pre>
+
+The methods <code>writeSerializable</code> and
+<code>readSerializable</code> defines how the marshaling and
+unmarshaling of the objects passed across the communication stream.
+The default object serialization can be used as shown above or you can
+implement a better one (sending bytes) .
+
+<pre>
+//ExampleResultObject.java
+
+import java.io.*;
+import sdt.net.*;
+
+public class ExampleResultObject implements Result{
+    double output;
+
+    public ExampleResultObject(){
+        this.output = 0;
+    }
+
+    public ExampleResultObject(double d){
+        this.output = d;
+    }
+
+    public void writeSerializable(ObjectOutputStream out){
+        try{
+            out.writeObject(new Double(output));
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.exit(0);
+        }
+    }
+
+    public Object readSerializable(ObjectInputStream in){
+        double d = 0;
+        try{
+            d = ((Double)in.readObject()).doubleValue();
+        }
+        catch(Exception e){
+            System.out.println(e);
+            System.exit(0);
+        }
+        return new ExampleResultObject(d);
+    }
+
+    public String toString(){
+        return "result: "+output;
+    }
+}
+</pre>
+
+
+<h4>Step 3: Running the program</h4>
+
+Download <code>vitri1.0.jar</code> file and set the
+<code>CLASSPATH</code> variable such that it points to the jar file
+also.  Compile the classes.  The client can be invoked by typing
+<pre>
+   java Client -prgm SimpleExample -restart false -distributed true -p 20033 
+</pre>
+ and the server can be invoked by
+<pre>
+   java Server -client client_hostname -p 20033
+</pre>
+
+</blockquote>
+ 
+</body>
+</html>

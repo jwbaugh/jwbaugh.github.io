@@ -1,0 +1,548 @@
+
+@inproceedings{karrenberg-wdsa-2022,
+author = {Cade Karrenberg and Juan Benavides and Emily Berglund and
+  Eunsuk Kang and John Baugh},
+title = {Identifying cyber-physical vulnerabilities of water distribution
+  systems using finite state processes},
+booktitle = {2nd International Joint Conference on Water Distribution
+  System Analysis \& Computing and Control in the Water Industry,
+  {WDSA CCWI 2022}},
+year = {2022},
+location = {Universitat Politècnica de València Valencia (Spain)},
+number = {14838},
+OPTdoi = {not-posted-yet},
+url_pdf = {papers/karrenberg-wdsa-2022.pdf},
+OPTpublisher = {not-sure},
+keywords = {cyber-security, formal methods, water distribution system,
+  cyberphysical system, finite state processes},
+abstract = {
+Modern water distribution systems (WDS) comprise not only physical
+infrastructure, but also use smart meters, sensors, automated control
+systems and wireless communication links to manage hydraulic processes
+and water quality. Networked devices create new vulnerabilities to
+cyber-attacks, in which an attacker infiltrates connected devices
+through internet and network connections with potentially severe
+consequences, such as creating water supply interruptions and
+compromising water quality. Attention to cyber-attacks comes at a time
+of notable intrusions into the computer systems that monitor and
+control infrastructure, including the recent attack on a water
+treatment plant in Oldsmar, Florida. This paper describes an approach
+for probing a system's vulnerabilities and finding attack scenarios
+that may cause a disruption, for example, by lowering the pressure in
+water mains and exposing a system to harmful contaminants. Our
+modelling framework uses a process calculus called Finite State
+Processes (FSP), which is a formal notation that also includes a
+supporting tool, Labelled Transition System Analyzer (LTSA), for
+automatically checking safety and other desirable properties of
+computer systems. Applying formal methods tools, most-often used in
+the design and testing of hardware and software systems, to WDSs
+allows us to augment traditional simulation approaches with the
+exhaustive model-checking capabilities of tools such as LTSA. This
+framework couples FSP with epanetCPA, which is an open-source toolbox
+that can simulate attacks on a system's computer and network
+components to evaluate the resulting hydraulic response. Within this
+framework, we treat WDSs as a bounded state control problem to ensure,
+for instance, that water levels of an elevated storage tank are always
+within an acceptable range. Attacker capabilities are broadly defined
+and modelled to allow communication links to be compromised through
+eavesdropping and packet injection attacks. Feasible attack scenarios
+are automatically identified and produced by LTSA, which generates
+counterexamples to a safety property. To incorporate the physics of
+WDSs into FSP, we discretize and quantize systems and calibrate
+observable behaviors using Python scripts, including the package Water
+Network Tool for Resilience (WNTR). Attack scenarios are simulated
+with epanetCPA for purposes of validation.}
+}
+
+@article{kwag-engstruct-2021,
+title = {Significance of multi-hazard risk in design of buildings
+under earthquake and wind loads},
+author = {Shinyoung Kwag and Abhinav Gupta and John Baugh and Hyun-Su Kim},
+journal = {Engineering Structures},
+volume = {243},
+pages = {112623},
+year = {2021},
+OPTissn = {xxx},
+doi = {10.1016/j.engstruct.2021.112623},
+OPTurl = {https://www-sciencedirect-com.prox.lib.ncsu.edu/science/article/pii/S0141029621007732},
+url_pdf = {papers/kwag-engstruct-2021.pdf},
+keywords = {Earthquake and wind hazards; Performance-based design;
+Risk-based multi-hazard approach; Multi-hazard risk map; Multi-hazard
+scenario; Magneto-rheological damper; Adjacent buildings},
+abstract = {
+Traditionally, external hazards are considered in the design of a
+building through the various combinations of loads prescribed in
+relevant design codes and standards. It is often the case that the
+design is governed by a single dominant hazard at a given geographic
+location. This is particularly true for earthquake and wind hazards,
+both of which impart time-dependent dynamic loads on the
+structure. Engineers may nevertheless wonder if a building designed
+for one of the two dominant hazards will satisfactorily withstand the
+other. Prior studies have indicated that in some cases, when a
+building is designed for a single dominant hazard, it does not
+necessarily provide satisfactory performance against the other
+hazard. In this paper, we propose a novel framework that builds upon
+performance-based design requirements and determines whether the
+design of a building is governed primarily by a single hazard or
+multiple hazards. It integrates site-dependent hazard characteristics
+with the performance criteria for a given building type and building
+geometry. The framework is consistent with the burgeoning area of
+probabilistic risk assessment, and yet can easily be extended to
+traditional, deterministically characterized design requirements as
+illustrated herein.}
+}
+
+@inproceedings{dyer-abz-2021,
+title = {Sterling: A web-based visualizer for relational modeling languages},
+author = {Dyer, Tristan and Baugh, John},
+booktitle = {Rigorous State Based Methods. ABZ 2021},
+note = {Lecture Notes in Computer Science 12709},
+pages = {99-104},
+address = {Cham},
+year = {2021},
+publisher = {Springer},
+OPTisbn = {978-3-030-77543-8},
+doi = {10.1007/978-3-030-77543-8_7},
+url_pdf = {papers/dyer-abz-2021.pdf},
+abstract = {
+We introduce Sterling, a web-based visualization tool that provides
+interactive views of relational models and allows users to create
+custom visualizations using modern JavaScript libraries like D3 and
+Cytoscape.  We outline its design goals and architecture, and describe
+custom visualizations developed with Sterling that enable verification
+studies of scientific software used in production.  While development
+is driven primarily by the Alloy community, other relational modeling
+languages are accommodated by Sterling's data agnostic architecture.}
+}
+
+@inproceedings{curri-hicss-21,
+author = {Curri, Danielle and Aziz, Tarek and Baugh, John and Johnson,
+  Jeremiah},
+title = {Industrial Symbiosis Waste Exchange Identification and
+  Optimization},
+booktitle = {Proceedings of the 54th Hawaii International Conference on
+  System Sciences},
+year = {2021},
+pages = {916-925},
+url = {http://hdl.handle.net/10125/70724},
+url_pdf = {papers/curri-hicss-21.pdf},
+abstract = {
+Industrial symbiosis is the concept that waste from industrial
+processes can be diverted and then reused as inputs into co-located
+industrial entities. While research to date has identified successful
+examples of industrial symbiosis and characterized formation
+processes, little is known about how new eco-industrial parks can be
+designed and their performance optimized. In this paper, we describe
+how industrial symbiosis can be modeled and optimized during the
+development phase to assist in the creation of eco-industrial
+parks. We present a database framework, waste exchange identification
+algorithm, and Python-based optimization system that generates a
+mixed-integer linear programming model to minimize the amount of
+non-recycled waste produced. We illustrate the functionality of the
+approach on three test cases that demonstrate increasing levels of
+complexity. The optimization model can also accommodate multiple
+objectives, allowing further exploration of the benefits of industrial
+symbiosis at the design stage.}
+}
+
+@incollection{banach-festschrift-2020,
+author = {Banach, Richard and Baugh, John},
+editor = {Adamatzky, Andrew and Kendon, Vivien},
+title = {A simple {Hybrid Event-B} model of an active control system for
+  earthquake protection},
+bookTitle = {From Astrophysics to Unconventional Computation},
+year = {2020},
+publisher = {Springer},
+address = {Cham},
+series = {Emergence, Complexity and Computation},
+volume = {35},
+pages = {157-194},
+isbn = {978-3-030-15792-0},
+doi = {10.1007/978-3-030-15792-0_7},
+OPT_url = {https://doi.org/10.1007/978-3-030-15792-0_7},
+url_pdf = {papers/banach-festschrift-2020.pdf},
+abstract = {
+In earthquake-prone zones of the world, severe damage to buildings and
+life endangering harm to people pose a major risk when severe
+earthquakes happen. In recent decades, active and passive measures to
+prevent building damage have been designed and deployed. A simple
+model of an active damage prevention system, founded on earlier work,
+is investigated from a model based formal development perspective,
+using Hybrid Event-B. The non-trivial physical behaviour in the model
+is readily captured within the formalism. However, when the usual
+approximation and discretization techniques from engineering and
+applied mathematics are used, the rather brittle refinement techniques
+used in model based formal development start to break down. Despite
+this, the model developed stands up well when compared via simulation
+with a standard approach. The requirements of a richer formal
+development framework, better able to cope with applications
+exhibiting non-trivial physical elements are discussed.}
+}
+
+
+@inproceedings{dyer-correctness-2019,
+author = {Dyer, Tristan and Altuntas, Alper and Baugh, John},
+title = {Bounded verification of sparse matrix computations},
+booktitle = {Proceedings of the Third International Workshop on
+  Software Correctness for {HPC} Applications, {Correctness'19}},
+year = {2019},
+isbn = {978-1-7281-6015-3},
+location = {Denver, CO, USA},
+pages = {36-43},
+doi = {10.1109/Correctness49594.2019.00010},
+url_pdf = {papers/dyer-correctness-2019.pdf},
+publisher = {IEEE/ACM},
+keywords = {sparse matrix formats, state-based formal methods, mechanical
+  verification},
+abstract = {
+We show how to model and reason about the structure and behavior of
+sparse matrices, which are central to many applications in scientific
+computation.  Our approach is state-based, relying on a formalism
+called Alloy to show that one model is a refinement of another.  We
+present examples of sparse matrix-vector multiplication, transpose,
+and translation between formats using ELLPACK and compressed sparse
+row formats to demonstrate the approach.  To model matrix computations
+in a declarative language like Alloy, a new idiom is presented for
+bounded iteration with incremental updates.  Mechanical verification
+is performed using SAT solvers built into the tool.}
+}
+
+@inproceedings{altuntas-correctness-2018,
+author = {Altuntas, Alper and Baugh, John},
+title = {Hybrid theorem proving as a lightweight method for verifying
+  numerical software},
+booktitle = {Proceedings of the Second International Workshop on
+  Software Correctness for {HPC} Applications, {Correctness'18}},
+year = {2018},
+isbn = {978-1-7281-0226-9},
+location = {Dallas, TX, USA},
+pages = {1-8},
+doi = {10.1109/Correctness.2018.00005},
+url_pdf = {papers/altuntas-correctness-2018.pdf},
+publisher = {IEEE},
+keywords = {hybrid systems, formal methods, scientific computation,
+  KeYmaera X},
+abstract = {
+Large-scale numerical software requires substantial computer resources
+that complicate testing and debugging. A single run of a climate model
+may require many millions of core-hours and terabytes of disk space,
+making trial-and-error experiments burdensome and time consuming. In
+this study, we apply hybrid theorem proving from the field of
+cyber-physical systems to problems in scientific computation, and show
+how to verify the correctness of discrete updates that appear in the
+simulation of continuous physical systems. By viewing numerical
+software as a hybrid system that combines discrete and continuous
+behavior, test coverage and confidence in findings can be
+increased. We describe abstraction approaches for modeling numerical
+software and demonstrate the applicability of the approach in a case
+study that reproduces undesirable behavior encountered in a
+parameterization scheme, called the K-profile parameterization, widely
+used in ocean components of large-scale climate models. We then
+identify and model a fix in the configuration of the scheme, and
+verify that the undesired behavior is eliminated for all possible
+execution sequences. We conclude that hybrid theorem proving is an
+effective and efficient approach that can be used to verify and reason
+about properties of large-scale numerical software.}
+}
+
+@article{liu-ecs-2018,
+title = {Numerical study on factors influencing typhoon-induced storm
+surge distribution in {Zhanjiang Harbor}},
+author = {Xing Liu and Wensheng Jiang and Bo Yang and John Baugh},
+journal = {Estuarine, Coastal and Shelf Science},
+volume = {215},
+pages = {39-51},
+year = {2018},
+issn = {0272-7714},
+doi = {10.1016/j.ecss.2018.09.019},
+OPTurl = {http://www.sciencedirect.com/science/article/pii/S027277141830009X},
+url_pdf = {papers/liu-ecs-2018.pdf},
+keywords = {Local atmospheric effect, Remote atmospheric effect, Storm
+  surge, Spatial distribution, Sea level rise, Typhoon track},
+abstract = {
+A 2-D unstructured finite element model is used to study how local and
+remote atmospheric forcing, sea level rise, and shoreline variation
+affect typhoon-induced storm surge in a small shallow bay, Zhanjiang
+Harbor (ZH). In this research, the spatial distribution of storm surge
+is divided into three patterns in ZH, denoted E-W, N-S, and S-N, using
+a quantitative method. In the Bay, local atmospheric effects (LAE) and
+remote atmospheric effects (RAE) both play important roles in the
+maximum residual water level. The contribution of RAE to the inflow is
+higher than that of the LAE, but the former is less important in the
+spatial distribution in ZH. In addition, the typhoon track influences
+the time of occurrence of the maximum surge by forcing the outer
+waters to ZH, then the spatial distribution of the surge residual in
+the bay is controlled by local winds, and different regions are
+threatened during different kinds of storm surge processes. Two sea
+level rise scenarios are set up in the paper as well, and the results
+show that the trends of the changes in LAE and RAE in the inner-bay
+are the opposite in the case of sea level rise; however, the total
+changes of the distribution are not the same in different
+categories. In general, the E-W category storm surge is weakened,
+while the N-S and S-N category storm surges have inverse changes in
+the north and south of ZH. There is a downward trend of the maximum
+surge gradient within the Bay, but relative to sea level rise itself
+this effect is not obvious. The establishment of the sea embankment
+increased the storm surge within the bay though it is not significant.}
+}
+
+@inproceedings{baugh-abz-2018,
+title = {State-based formal methods in scientific computation},
+author = {Baugh, John and Dyer, Tristan},
+OPTeditor = {Butler, Michael and Raschke, Alexander and Hoang, Thai Son
+  and Reichl, Klaus},
+booktitle = {Abstract State Machines, Alloy, B, TLA, VDM, and Z: 6th
+  International Conference, ABZ 2018},
+note = {Lecture Notes in Computer Science 10817},
+pages = {392-396},
+address = {Cham},
+year = {2018},
+publisher = {Springer},
+isbn = {978-3-319-91271-4},
+doi = {10.1007/978-3-319-91271-4_29},
+url_pdf = {papers/baugh-abz-2018.pdf},
+abstract = {
+Control systems, protocols, and hardware design are among the most
+common applications of state-based formal methods, and yet the types
+of modeling and analysis they enable are also well-suited to problems
+in scientific computation, where quality, reproducibility, and
+productivity are growing concerns. We survey the challenges faced by
+developers of scientific software, characterize the nature of the
+programs they write, and offer some perspective on the role that
+state-based methods can play in scientific domains.}
+}                  
+
+@article{baugh-scp-2018,
+title = {Formal methods and finite element analysis of hurricane storm
+  surge: A case study in software verification},
+author = {John Baugh and Alper Altuntas},
+journal = {Science of Computer Programming},
+volume = {158},
+pages = {100-121},
+year = {2018},
+OPTnote = {Abstract State Machines, Alloy, B, TLA, VDM and Z (ABZ 2016)},
+issn = {0167-6423},
+doi = {10.1016/j.scico.2017.08.012},
+OPTurl = {{http://www.sciencedirect.com/science/article/pii/S0167642317301715}},
+url_pdf = {papers/baugh-scp-2018.pdf},
+keywords = {Formal methods, Model checking, Scientific computing,
+  Earth and atmospheric sciences},
+abstract = {
+Used to predict the effects of hurricane storm surge, ocean
+circulation models are essential tools for evacuation planning,
+vulnerability assessment, and infrastructure design.  Implemented as
+numerical solvers that operate on large-scale datasets, these models
+determine the geographic extent and severity of coastal floods and
+other impacts.  In this study, we look at an ocean circulation model
+used in production and an extension made to it that offers substantial
+performance gains.  To explore implementation choices and ensure
+soundness of the extension, we make use of Alloy, a declarative
+modeling language with tool support and an automatic form of analysis
+performed within a bounded scope using a SAT solver.  Abstractions for
+relevant parts of the ocean circulation model are presented, including
+the physical representation of land and seafloor surfaces as a finite
+element mesh, and an algorithm operating on it that allows for the
+propagation of overland flows.  The approach allows us to draw useful
+conclusions about implementation choices and guarantees about the
+extension, in particular that it is equivalence preserving.}
+}
+
+@inproceedings{altuntas-correctness-2017,
+author = {Altuntas, Alper and Baugh, John},
+title = {Verifying concurrency in an adaptive ocean circulation model},
+booktitle = {Proceedings of the First International Workshop on
+  Software Correctness for {HPC} Applications, {Correctness'17}},
+year = {2017},
+isbn = {978-1-4503-5127-0},
+location = {Denver, CO, USA},
+pages = {1-7},
+doi = {10.1145/3145344.3145346},
+OPTurl = {{http://doi.acm.org/10.1145/3145344.3145346}},
+url_pdf = {papers/altuntas-correctness-2017.pdf},
+acmid = {3145346},
+publisher = {ACM},
+OPTaddress = {New York, NY, USA},
+keywords = {Scientific computing, concurrency, finite element
+  analysis, hurricane storm surge, model checking},
+abstract = {
+We present a model checking approach for verifying the correctness of
+concurrency in numerical models.  The forms of concurrency we address
+are from (1) coupled modeling where distinct components, e.g., ocean,
+wave, and atmospheric, exchange interface conditions during runtime,
+and (2) multi-instance modeling where local variations of the same
+numerical model are executed concurrently to minimize common (and
+therefore redundant) computations. We present general guidelines for
+representing these forms of concurrency in an abstract verification
+model and then apply them to an adaptive ocean circulation model that
+determines the geographic extent and severity of coastal floods. The
+ocean model employs multi-instance concurrency: a collection of
+engineering design and failure scenarios are concurrently simulated
+using patches, regions of a grid that grow and shrink based on the
+hydrodynamic changes induced by each scenario. We show how concurrency
+inherent in the simulation model can be represented in a verification
+model to ensure correctness and to automatically generate safe
+synchronization arrangements.}
+}
+
+@article{altuntas-ocemod-2017,
+title = {Adaptive subdomain modeling: A multi-analysis technique for
+  ocean circulation models},
+author = {Alper Altuntas and John Baugh},
+journal = {Ocean Modelling},
+volume = {115},
+pages = {86-104},
+year = {2017},
+issn = {1463-5003},
+doi = {10.1016/j.ocemod.2017.05.009},
+OPTurl = {{http://www.sciencedirect.com/science/article/pii/S146350031730080X}},
+url_pdf = {papers/altuntas-ocemod-2017.pdf},
+keywords = {Storm surge, Adaptive algorithm, Subdomain modeling,
+  Moving boundaries, ADCIRC},
+abstract = {
+Many coastal and ocean processes of interest operate over large
+temporal and geographical scales and require a substantial amount of
+computational resources, particularly when engineering design and
+failure scenarios are also considered. This study presents an adaptive
+multi-analysis technique that improves the efficiency of these
+computations when multiple alternatives are being simulated.  The
+technique, called adaptive subdomain modeling, concurrently analyzes
+any number of child domains, with each instance corresponding to a
+unique design or failure scenario, in addition to a full-scale parent
+domain providing the boundary conditions for its children.  To contain
+the altered hydrodynamics originating from the modifications, the
+spatial extent of each child domain is adaptively adjusted during
+runtime depending on the response of the model. The technique is
+incorporated in ADCIRC++, a re-implementation of the popular ADCIRC
+ocean circulation model with an updated software architecture designed
+to facilitate this adaptive behavior and to utilize concurrent
+executions of multiple domains. The results of our case studies
+confirm that the method substantially reduces computational effort
+while maintaining accuracy.}
+}
+
+@article{baugh-istruc-2016,
+title = {A general characterization of the {Hardy} {Cross} method as
+  sequential and multiprocess algorithms},
+author = {Baugh, John and Liu, Shu},
+journal = {Structures},
+volume = {6},
+pages = {170-181},
+year = {2016},
+issn = {2352-0124},
+doi = {10.1016/j.istruc.2016.03.004},
+OPTurl = {{https://www.sciencedirect.com/science/article/pii/S2352012416300054}},
+url_pdf = {papers/baugh-istruc-2016.pdf},
+keywords = {Algorithms, Concurrency, Convergence, Hardy Cross method,
+  Moment distribution},
+abstract = {
+The Hardy Cross method of moment distribution admits, for any problem,
+an entire family of distribution sequences.  Intuitively, the method
+involves clamping the joints of beams and frames against rotation and
+balancing moments iteratively, whether consecutively, simultaneously,
+or in some combination of the two. We present common versions of the
+moment distribution algorithm and generalizations of them as both
+sequential and multiprocess algorithms, with the latter exhibiting the
+full range of asynchronous behavior allowed by the method.  We prove,
+in the limit, that processes so defined converge to the same unique
+solution regardless of the distribution sequence or interleaving of
+steps. In defining the algorithms, we avoid overspecifying the order
+of computation initially using a sequential, nondeterministic process,
+and then more generally using concurrent processes.}
+}
+
+@inproceedings{baugh-abz-2016,
+title = {Modeling a discrete wet-dry algorithm for hurricane storm
+  surge in {Alloy}},
+author = {Baugh, John and Altuntas, Alper},
+OPTeditor = {Butler, Michael and Schewe, Klaus-Dieter and Mashkoor, Atif
+  and Biro, Miklos},
+booktitle = {Abstract State Machines, Alloy, B, TLA, VDM, and Z: 5th
+  International Conference, ABZ 2016},
+note = {Lecture Notes in Computer Science 9675},
+pages = {256-261},
+address = {Cham},
+year = {2016},
+publisher = {Springer},
+isbn = {978-3-319-33600-8},
+doi = {10.1007/978-3-319-33600-8_18},
+url_pdf = {papers/baugh-abz-2016.pdf},
+abstract = {
+We describe an Alloy model that helps check the correctness of a
+discrete wet-dry algorithm used in a system for hurricane storm surge
+prediction. Derived from simplified physics and encoded with empirical
+rules, the algorithm operates on a finite element mesh to allow the
+propagation of overland flows. Our study is motivated by complex
+interactions between the algorithm and a recent performance
+enhancement to the system that involves mesh partitioning. We briefly
+outline our approach and describe safety properties of the extension,
+as well as directions for future work.}
+}
+
+@article{dyer-ades-2016,
+title = {{SMT}: An interface for localized storm surge modeling},
+author = {Dyer, Tristan and Baugh, John},
+journal = {Advances in Engineering Software},
+volume = {92},
+pages = {27-39},
+year = {2016},
+issn = {0965-9978},
+doi = {10.1016/j.advengsoft.2015.10.003},
+OPTurl = {{http://www.sciencedirect.com/science/article/pii/S0965997815001428}},
+url_pdf = {papers/dyer-ades-2016.pdf},
+keywords = {ADCIRC, Finite element analysis, Hurricane storm surge,
+  Range search, Subdomain modeling, Visualization},
+abstract = {
+The devastation wrought by Hurricanes Katrina (2005), Ike (2008), and
+Sandy (2012) in recent years continues to underscore the need for
+better prediction and preparation in the face of storm surge and
+rising sea levels. Simulations of coastal flooding using physically
+based hydrodynamic codes like ADCIRC, while very accurate, are also
+computationally expensive, making them impractical for iterative
+design scenarios that seek to evaluate a range of countermeasures and
+possible failure points. We present a graphical user interface that
+supports local analysis of engineering design alternatives based on an
+exact reanalysis technique called subdomain modeling, an approach that
+substantially reduces the computational effort required. This
+interface, called the Subdomain Modeling Tool (SMT), streamlines the
+pre- and post-processing requirements of subdomain modeling by
+allowing modelers to extract regions of interest interactively and by
+organizing project data on the file system. Software design and
+implementation issues that make the approach practical, such as a
+novel range search algorithm, are presented. Descriptions of the
+overall methodology, software architecture, and performance results
+are given, along with a case study demonstrating its use.}
+}
+
+@article{baugh-ceng-2015,
+title = {An exact reanalysis technique for storm surge and tides in a
+  geographic region of interest},
+author = {Baugh, John and Altuntas, Alper and Dyer, Tristan and Simon, Jason},
+journal = {Coastal Engineering},
+volume = {97},
+pages = {60-77},
+year = {2015},
+issn = {0378-3839},
+doi = {10.1016/j.coastaleng.2014.12.003},
+OPTurl = {{http://www.sciencedirect.com/science/article/pii/S0378383914002208}},
+url_pdf = {papers/baugh-ceng-2015.pdf},
+keywords = {ADCIRC, Hurricane, Storm surge, Subdomain modeling},
+abstract = {
+Understanding the effects of storm surge in hurricane-prone regions is
+necessary for protecting public and lifeline services and improving
+resilience. While coastal ocean hydrodynamic models like ADCIRC may be
+used to assess the extent of inundation, the computational cost may be
+prohibitive since many local changes corresponding to design and
+failure scenarios would ideally be considered. We present an exact
+reanalysis technique and corresponding implementation that enable the
+assessment of local subdomain changes with less computational effort
+than would be required by a complete resimulation of the full
+domain. So long as the subdomain is large enough to fully contain the
+altered hydrodynamics, changes may be made and simulations performed
+within it without the need to calculate new boundary values. Accurate
+results are obtained even when subdomain boundary conditions are
+forced only intermittently, and convergence is demonstrated by
+progressively increasing the frequency at which they are
+applied. Descriptions of the overall methodology, performance results,
+and accuracy, as well as case studies, are presented.}
+}
+

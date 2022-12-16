@@ -90,29 +90,9 @@ An HPC practitioner's workbench for formal refinement
 <div class="panel">
 <p>
 
-<b>Base Model</b> &#8211;
-abstract and concrete models and an abstraction function that relates them<br>
+<b>Base Model</b> <br>
+Abstract and concrete models and an abstraction function that relates them<br>
 <a href="./coarray/jacobi.als" target="_blank">jacobi.als</a> <p>
-
-<b>Adequacy</b> &#8211;
-show that every abstract state has a concrete counterpart<br>
-<a href="./coarray/adequacy.als" target="_blank">adequacy.als</a> <p>
-
-<b>Functional</b> &#8211;
-show that the abstraction function alpha is functional<br>
-<a href="./coarray/functional.als" target="_blank">functional.als</a> <p>
-
-<b>Total</b> &#8211;
-show that the abstraction function alpha is total<br>
-<a href="./coarray/total.als" target="_blank">total.als</a> <p>
-
-<b>Correct</b> &#8211;
-show that the refinement is correct (a safety check)<br>
-<a href="./coarray/correct.als" target="_blank">correct.als</a> <p>
-
-<b>Progress</b> &#8211;
-show that the concrete operator (JacobiStep) is total<br>
-<a href="./coarray/progress.als" target="_blank">progress.als</a> <p>
 
 </p>
 </div>

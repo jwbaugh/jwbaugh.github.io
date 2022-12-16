@@ -1,0 +1,403 @@
+<html>
+<head>
+<title>Distributed GA guide</title>
+</head>
+
+<body>
+ 
+<blockquote>
+
+<h3>
+<font color="#000099" face="Helvetica, Arial, sans-serif">
+Distributed GA Guide
+</font>
+</h3>
+
+The distributed GA is very easy to use. The program basically looks at
+a file called <code>ga_info.txt</code> which contains all the
+parameter definitions. Modify the file for your own needs.  In order
+to use the GA framework for a particular problem two classes need to
+be implemented. The implementation of organism and the fiteness class.
+The implementations for the knapsack problem is shown below.
+
+<pre>
+//KnapsackOrganism.java
+
+import sdt.net.Result;
+import java.io.*;
+
+/**
+ * Specific implementation for the Knapsack problem.
+ */
+public class KnapsackOrganism extends ByteArrayOrganism {
+  
+    private static final int benefit[] =
+    { 1, 13, 12, 19, 1, 6, 6, 15, 8, 4, 5, 12, 11, 18, 9, 9, 12, 16, 2, 8,
+      11, 3, 9, 17, 2, 16, 2, 5, 3, 17, 11, 10, 13, 18, 2, 7,13, 11, 10, 16 };
+
+    private static final int cost[] =
+    { 7, 3, 5, 7, 9, 1, 18, 12, 12, 19, 1, 18, 12, 13, 16, 6, 17, 6, 15, 16,
+      10, 10, 10, 6, 11, 16, 10, 5, 1, 12, 4, 19, 6, 4, 13, 1, 17, 11, 9, 11 };
+
+    private static int size = benefit.length;
+
+    private static final int PENALTY = 4;
+
+    private static final int MAX_COST = 200;
+
+    public KnapsackOrganism() {
+        storage = new byte[size];
+        values = 2;
+    }
+
+    public KnapsackOrganism(byte b[]){
+        storage = b;
+    }
+
+    /** Protocol for reading an organism from the input stream. */
+    public Object readSerializable(ObjectInputStream in){
+        byte[] b = new byte[40];
+        try{
+            in.read(b);
+        }
+        catch(IOException e){
+            System.out.println("problem in reading the object back!");
+            System.exit(0);
+        }
+        return new KnapsackOrganism(b);
+    }
+
+    /** WORKS WITH DEFAULT SERIALIZATION ALSO */
+    /*
+    public void writeSerializable(ObjectOutputStream out) {
+        try{
+            out.writeObject(this);
+            out.flush();
+        }
+        catch(IOException e){
+            System.out.println("In ByteArrayOrganism, while writing!");
+            //System.exit(0);
+        }
+    }
+
+    public Object readSerializable(ObjectInputStream in){
+        KnapsackOrganism org = null;
+        try{
+            org = (KnapsackOrganism)in.readObject();
+        }
+        catch(Exception e){
+            System.out.println("problem in reading the object back!");
+            System.exit(0);
+        }
+        return org;
+    }
+    */
+
+   /** Specifies how to create an instance of an organism initially. */
+    public Object getInitialOrganism() {
+        return new Double(0);
+    }
+
+    /** Dot product of two vectors. */
+    public int dot(int a[]) {
+        int sum = 0;
+        for (int i = 0; i < storage.length; i++)
+            sum += storage[i] * a[i];
+        return sum;
+    }
+
+    /** Specifies the objective function to calculate the fitness. */
+    public Fitness evaluate() {
+        int b = dot(benefit);
+        int c = dot(cost);
+        return new KnapsackFitness((b - (c > MAX_COST ? 
+                                      PENALTY * (c - MAX_COST) : 0)), true);
+    }
+
+    /** Specifies how a task is being run. */
+    public Result runTask() {
+        return evaluate();
+    }
+
+    /** Assigns the result of fitness evaluation. */
+    public void setResult(Result output) {
+        setFitness((Fitness)output);
+    }  
+
+    /** Returns a string representation of the organism */
+    public String toString() {
+        return super.toString() + " b = " + dot(benefit) + " c = " + dot(cost);
+    }
+
+    /** For garbage collection */
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+}
+</pre>
+
+<pre>
+//ByteArrayOrganism.java (KnapsackOrganism uses ByteArrayOrganism)
+
+abstract public class ByteArrayOrganism extends Organism {
+
+    protected byte storage[];
+    protected int values;        // number of values at each storage location
+                                 // e.g., values = 2 for a binary string
+
+    public void copy(Organism org) {
+        ByteArrayOrganism borg = (ByteArrayOrganism)org;
+        for(int i=0; i<storage.length; i++)
+            storage[i] = borg.storage[i];
+        values = borg.values;
+    }
+
+    public void writeSerializable(ObjectOutputStream out){
+        try{
+            out.write(storage,0,storage.length-1);
+            out.flush();
+        }
+        catch(IOException e){
+            System.out.println("In ByteArrayOrganism, while writing!");
+            //System.exit(0);
+        }
+    }
+  
+    public double getPhenotypeComp(Organism org){
+        double duv = 0;
+        ByteArrayOrganism borg = (ByteArrayOrganism)org;
+        for(int i=0;i<storage.length;i++){
+            if(storage[i]!=borg.storage[i])
+                duv+=1;
+        }
+        return duv;
+    }
+  
+    public Object clone() {
+        ByteArrayOrganism org = (ByteArrayOrganism) super.clone();
+        org.storage = (byte []) storage.clone();
+        return org;
+    }
+
+    public int rand_n(int n) {
+        return Math.abs(ga.random.nextInt()) % n;
+    }
+  
+    public void randomize() {
+        for (int i = 0; i < storage.length; i++)
+            storage[i] = (byte) rand_n(values);
+        fitness.setFitnessEvaluated(false); // must be recomputed
+    }
+
+    public void crossover(Organism org) {
+        ByteArrayOrganism b = (ByteArrayOrganism) org;
+        int size = Math.min(storage.length, b.storage.length);
+        int index = rand_n(size);
+
+        for (int i = index; i < size; i++) {
+            byte temp = storage[i];    // swap contents of this and b
+            storage[i] = b.storage[i];
+            b.storage[i] = temp;
+        }
+        this.fitness.setFitnessEvaluated(false); // must be recomputed
+        org.fitness.setFitnessEvaluated(false); // must be recomputed
+    }
+
+    public void mutate() {
+        for (int i = 0; i < storage.length; i++)
+            if (ga.random.nextFloat() < ga.mutation_rate)
+                storage[i] = (byte) ((storage[i] + 1 + rand_n(values-1)) % values);
+        fitness = new KnapsackFitness(Double.NaN);    // must be recomputed
+    }
+  
+    public String toString() {
+        int n = storage.length + 2;
+        char s[] = new char[n];
+
+        s[0] = '<'; s[n-1] = '>';
+        for (int i = 1; i < n-1; i++)
+            s[i] = (char) (storage[i-1] + '0');
+        return new String(s) + " [" + fitness + "]";
+    }
+
+    /**
+     * For garbage collection
+     */
+    protected void finalize() throws Throwable {
+        storage = null;
+        super.finalize();
+    }
+}
+</pre>
+
+
+Note that we have shown the communication routines with and without
+object serialization.  Here is the implementation of KnapsackFitness
+
+<pre>
+//KnapsackFitness
+
+import java.io.*;
+
+/**
+ * Specific implementation of a Knapsack fitness class.
+ */
+public class KnapsackFitness extends Fitness {
+
+    /** The fitness value associated with an organism. */
+    double fitnessValue;
+
+    /** Create an instance of a fitness class. */
+    public KnapsackFitness() {
+        super();
+        this.fitnessValue = Double.NEGATIVE_INFINITY;
+    }
+
+    /** Create an instance of a fitness class with a specified fitness. */
+    public KnapsackFitness(double fitnessValue) {
+        super();
+        this.fitnessValue = fitnessValue;
+    }
+
+    /**
+     * Create an instance of a fitness class specifying if it has been
+     * evaluated or not.
+     */
+    public KnapsackFitness(double fitnessValue, boolean fitnessEvaluated) {
+        this.fitnessValue = fitnessValue;
+        super.setFitnessEvaluated(fitnessEvaluated);
+    }
+
+    /**
+     * Specific protocol for writing the fitness value to the
+     * output stream.
+     */
+    public void writeSerializable(ObjectOutputStream out){
+        try{
+            out.writeDouble(fitnessValue);
+            out.flush();
+        }
+        catch(IOException e){
+            System.out.println("In writing result, fitness "+e);
+            System.exit(0);
+        }
+  
+    }
+
+    /**
+     * Specific protocol for reading the fitness value from the 
+     * input stream.
+     */
+    public Object readSerializable(ObjectInputStream in){
+        double fit = 0;
+        try{
+            fit = in.readDouble();
+        }
+        catch(Exception e){
+            System.out.println("problem in reading the fitness back..");
+        }
+        return new KnapsackFitness(fit);
+   
+    }
+
+    /** WORKS WITH THE DEFAULT SERIALIZATION */
+    /*
+    public void writeSerializable(ObjectOutputStream out){
+        try{
+            out.writeObject(new Double(fitnessValue));
+            out.flush();
+        }
+        catch(IOException e){
+            System.out.println("In writing result, fitness "+e);
+            System.exit(0);
+        }
+  
+    }
+    public Object readSerializable(ObjectInputStream in){
+        Double fit = null;
+        try{
+            fit = (Double)in.readObject();
+        }
+        catch(Exception e){
+            System.out.println("problem in reading the fitness back..");
+        }
+        return new KnapsackFitness(fit.doubleValue());
+  
+    }
+    */
+
+    /** Returns the fitness value. */
+    public double getFitnessValue() {
+        return fitnessValue;
+    }
+
+    /** Compares if the fitness is less than a certain specified fitness. */
+    public boolean lessThan (Comparable comp) {
+        return (fitnessValue < ((KnapsackFitness)comp).fitnessValue);
+    }
+
+    /** Compares if the fitness is greater than a certain specified fitness. */
+    public boolean greaterThan (Comparable comp) {
+        return (fitnessValue > ((KnapsackFitness)comp).fitnessValue);
+    }
+
+    /** Compares if the fitness is equal to certain specified fitness. */
+    public boolean equalTo (Comparable comp) {
+        return (fitnessValue == ((KnapsackFitness)comp).fitnessValue);
+    }
+
+    /** Copies a certain specied fitness over to the current one. */
+    public void copy(AveragePopProperties fit) {
+        fitnessValue = ((KnapsackFitness)fit).fitnessValue;
+        setFitnessEvaluated(true);
+    }
+
+    /** Specifies the addition operation with another fitness instance. */
+    public AveragePopProperties add(AveragePopProperties fit) {
+        return new KnapsackFitness(this.fitnessValue +
+                                    ((KnapsackFitness)fit).fitnessValue);
+    }
+
+    /** Specifies the division operation by a number. */
+    public AveragePopProperties div(int size) {
+        return new KnapsackFitness(this.fitnessValue/size);
+    } 
+
+    /** Implements the clone method */
+    public Object clone() {
+        KnapsackFitness temp = new KnapsackFitness();
+        temp.fitnessValue = this.fitnessValue;
+        return temp;
+    }
+
+    /** Implements a string representation. */
+    public String toString() {
+        return ""+ fitnessValue;
+    }
+
+    /** For garbage collection */
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+}
+</pre>
+
+
+Running distributed synchronous GA client
+<pre>
+    java Client -prgm sdt.ga.GeneticAlgorithm -restart true/false -distributed true -p 20033
+</pre>
+
+Running distributed asynchronous GA client
+<pre>
+    java Client -prgm sdt.ga.AsyncGeneticAlgorithm -restart true/false -distributed true -p 20033
+</pre>
+Running Server<br>
+<pre>
+    java Server -client client_hostname -p 20033
+</pre>
+
+</blockquote>
+ 
+</body>
+</html>
