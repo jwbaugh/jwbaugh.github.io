@@ -1,0 +1,2 @@
+javac JointImpl.java MomentRMI.java ; rmic JointImpl
+
