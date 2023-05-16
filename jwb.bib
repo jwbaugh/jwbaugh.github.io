@@ -1,4 +1,82 @@
 
+@inproceedings{banach-icgt-2023,
+title = {Formalisation, Abstraction and Refinement of Bond Graphs},
+author = {Banach, Richard and Baugh, John},
+booktitle = {16th International Conference on Graph Transformation (ICGT)},
+note={{Leicester, UK}, {EATCS and IFIP WG 1.3}, (to appear)},
+year={2023},
+url_pdf = {papers/banach-icgt-2023.pdf},
+abstract = {
+Bond graphs represent the structure and functionality of mechatronic
+systems from a power flow perspective. Unfortunately, presentations
+of bond graphs are replete with ambiguity, significantly impeding
+understanding. A formalisation of the essentials of bond graphs is
+given, together with a formalisation of bond graph transformation,
+which can directly express abstraction and refinement of bond graphs.}
+}
+
+@article{zhang-jss-2023,
+author = {Zhang, Miaomiao and Teng, Yu and Kong, Hui and Baugh, John and Su, Yu and Mi, Junri and Du, Bowen},
+title = {Automatic modelling and verification of {Autosar} architectures},
+journal = {Journal of Systems and Software},
+volume = {201},
+pages = {111675},
+year = {2023},
+publisher = {Elsevier},
+url_pdf = {papers/zhang-jss-2023.pdf},
+keywords = {Vehicle electronic system, Autosar, formal modelling, timed
+  automata, verification},
+abstract = {
+Autosar (AUTomotive Open System ARchitecture) is a development
+partnership whose primary goal is the standardization of basic system
+functions and functional interfaces for electronic control units in
+automobiles. As an open specification, its layered software
+architecture promotes the interoperability of real-time embedded
+vehicle systems and components. It also opens up the possibility of
+formal modelling and verification approaches, centred around the
+specification, that can be used to support analysis in the early
+stages of design. In this paper, we describe a methodology and
+associated tool, called A2A, that automatically models systems defined
+by the Autosar specifications as timed automata, and then verifies
+their timing properties using Uppaal. It contains 22 groups of timed
+automata templates, together with two auxiliary test templates, that
+model the Autosar architecture and timing properties, allowing
+time-related behaviours to be extracted from the three-layer
+architecture, i.e., the Autosar Software, Autosar Runtime Environment,
+and Basic Software layers, and templates to be automatically
+instantiated. The timing properties are specified using timed
+computation tree logic (TCTL) in Uppaal to verify the system model. We
+demonstrate the capabilities of the methodology by applying it to an
+Autosar architecture that describes an internal vehicle light control
+system, thereby showing its effectiveness.}
+}
+
+@inproceedings{benavides-lcpc-2023,
+author = {Juan Benavides and John Baugh and Ganesh Gopalakrishnan},
+title = {An {HPC} practitioner's workbench for formal refinement checking},
+editor = {Mendis, C. and Rauchwerger, L.},
+booktitle = {Languages and Compilers for Parallel Computing, LCPC 2022},
+note = {Lecture Notes in Computer Science, vol.~13829},
+OPTbooktitle = {35th International Workshop on Languages and Compilers for
+  Parallel Computing ({LCPC})},
+year = {2023},                  
+OPTlocation = {Chicago, IL},
+pages = {64-72},
+publisher = {Springer, Cham},
+url_pdf = {papers/benavides-lcpc-2023.pdf},
+keywords = {Formal methods, scientific computing, parallelism, Alloy},
+isbn = {978-3-031-31445-2},
+abstract = {
+HPC practitioners make use of techniques, such as parallelism and
+sparse data structures, that are difficult to reason about and debug. 
+Here we explore the role of data refinement, a correct-by-construction
+approach, in verifying HPC applications via bounded model checking.
+We show how single program, multiple data (SPMD) parallelism can be
+modeled in Alloy, a declarative specification language, and describe
+common issues that arise when performing scope-complete refinement
+checks in this context.}
+}
+
 @inproceedings{karrenberg-wdsa-2022,
 author = {Cade Karrenberg and Juan Benavides and Emily Berglund and
   Eunsuk Kang and John Baugh},
@@ -150,7 +228,7 @@ author = {Banach, Richard and Baugh, John},
 editor = {Adamatzky, Andrew and Kendon, Vivien},
 title = {A simple {Hybrid Event-B} model of an active control system for
   earthquake protection},
-bookTitle = {From Astrophysics to Unconventional Computation},
+booktitle = {From Astrophysics to Unconventional Computation},
 year = {2020},
 publisher = {Springer},
 address = {Cham},
