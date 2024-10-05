@@ -1,4 +1,38 @@
 
+@inproceedings{wilson-memocode-2024,
+title = {Physics-Aware Mixed-Criticality Systems Design via End-to-End Verification of CPS},
+author = {Kurt Wilson and Abdullah Al Arafat and John Baugh and Ruozhou Yu and Zhishan Guo},
+booktitle = {22nd ACM-IEEE International Symposium on Formal Methods and Models for System Design, MEMOCODE},
+year = {2024},
+publisher = {ACM/IEEE},
+OPTpages = {1-1},
+url_pdf = {papers/wilson-memocode-2024.pdf},
+abstract = {
+Autonomous systems are heavily used in many safety-critical systems,
+such as industrial automation, autonomous cars, Industrial Internet of
+Things (I-IoT), etc. Verification of the functional and temporal
+correctness of such systems is necessary before deployment to ensure
+their safety. However, due to the presence of physical systems in the
+continuous-time domain and computational models in the discrete-time
+domain, end-to-end verification of these systems is highly
+challenging. Existing formal methods focus on verifying physical
+models assuming static or simplified computation models. In contrast,
+existing real-time systems focus on satisfying strict timing bounds
+but do not care how those bounds are obtained and how they relate to
+physical safety. Our approach bridges these two domains, and
+constitutes an end-to-end verification framework for arbitrary
+physical models and computational models incorporated within a
+cyber-physical automated system. By allowing the interaction between
+the computational and physical models, our verification framework
+enables a fine-grained scheme that verifies against the local
+environment instead of verifying against global worst-case
+assumptions. Moreover, to support locally varying worst-case
+scenarios, a mixed-criticality system is proposed where the system
+supports several critical models and switches among the modes based on
+environmental uncertainty. Finally, a proof-of-concept evaluation of
+the proposed framework is reported.}
+}
+
 @inproceedings{banach-icgt-2024,
 title = {The `Causality' Quagmire for Formalised Bond Graphs},
 author = {Banach, Richard and Baugh, John},
