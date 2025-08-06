@@ -1,4 +1,112 @@
 
+@inproceedings{altuntas-vss-2025,
+author = {Alper Altuntas and Allison H. Baker and John Baugh and Ganesh Gopalakrishnan and Stephen Siegel},
+title = {Specification and Verification for Climate Modeling: Formalization Leading to Impactful Tooling},
+booktitle = {Verification of Scientific Software (VSS 2025), a workshop of ETAPS 2025: European Joint Conferences on Theory and Practice of Software},
+year = {2025},
+month = may,
+address = {Hamilton, Ontario, Canada},
+url_pdf = {papers/altuntas-vss-2025.pdf},
+abstract = {
+Earth System Models (ESMs) are critical for understanding past
+climates and projecting future scenarios. However, the complexity of
+these models, which include large code bases, a wide community of
+developers, and diverse computational platforms, poses significant
+challenges for software quality assurance. The increasing adoption of
+GPUs and heterogeneous architectures further complicates verification
+efforts. Traditional verification methods often rely on bitwise
+reproducibility, which is not always feasible, particularly under new
+compilers or hardware. Manual expert evaluation, on the other hand, is
+subjective and time-consuming. Formal methods offer a mathematically
+rigorous alternative, yet their application in ESM development has
+been limited due to the lack of climate model-specific representations
+and tools. Here, we advocate for the broader adoption of formal
+methods in climate modeling. In particular, we identify key aspects of
+ESMs that are well suited to formal specification and introduce
+abstraction approaches for a tailored framework. To demonstrate this
+approach, we present a case study using CIVL model checker to formally
+verify a bug fix in an ocean mixing parameterization scheme. Our goal
+is to develop accessible, domain-specific formal tools that enhance
+model confidence and support more efficient and reliable ESM
+development.}
+}
+
+@inproceedings{wilson-rtas-2025,
+author={Wilson, Kurt and Al Arafat, Abdullah and Baugh, John and Yu, Ruozhou and Guo, Zhishan},
+booktitle={2025 IEEE 31st Real-Time and Embedded Technology and Applications Symposium (RTAS)}, 
+title={Physics-Informed Mixed-Criticality Scheduling for {F1Tenth} Cars with Preemptable {ROS 2} Executors},
+year={2025},
+pages={215-227},
+keywords={Mixed-Criticality Systems;Temporal Verification;Formal Methods;F1Tenth cars;UPPAAL},
+doi={10.1109/RTAS65571.2025.00030},
+url_pdf = {papers/wilson-rtas-2025.pdf},
+abstract={
+Autonomous systems are increasingly used in safety-critical domains,
+including industrial automation, autonomous vehicles, and the
+industrial Internet of Things. Verifying both the functional and
+temporal correctness of these systems is essential to ensure safety
+before deployment. However, end-to-end verification is challenging due
+to the interaction of continuous-time physical processes with
+discrete-time computational systems. Existing formal methods often
+assume simplified or static computational models, while traditional
+real-time systems focus on meeting timing constraints without
+explicitly linking them to physical safety. We address this gap by
+proposing a physics-informed mixed-criticality (MC) verification
+framework for cyber-physical systems, which allows the integration of
+computational and physical models for dynamic, fine-grained safety
+assurance. Our framework incorporates feedback from the local
+environment to guide criticality-based mode switching, ensuring
+adaptive responses to real-time physical states rather than relying on
+global worst-case assumptions. We demonstrate the feasibility of our
+approach with a prototype implementation on an autonomous F1 Tenth
+vehicle using preemptive EDF scheduling on ROS 2. Verification is
+conducted using UPPAAL to validate system behavior, mode transitions,
+and physical safety constraints. Results show that our framework
+effectively manages MC requirements, enhancing responsiveness and
+safety in dynamic environments.}
+}
+
+@inproceedings{wilson-hscc-2025,
+author = {Wilson, Kurt and Arafat, Abdullah Al and Baugh, John and Yu, Ruozhou and Liu, Xue and Guo, Zhishan},
+title = {Soteria: A Formal Digital-Twin-Enabled Framework for Safety-Assurance of Latency-Aware Cyber-Physical Systems},
+booktitle = {Proceedings of the 28th ACM International Conference on Hybrid Systems: Computation and Control},
+year = {2025},
+isbn = {9798400715044},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3716863.3718028},
+doi = {10.1145/3716863.3718028},
+articleno = {22},
+numpages = {11},
+keywords = {Formal Methods, Hybrid Systems and Models, Real-Time Cyber-Physical Systems, Temporal Verification},
+location = {Irvine, CA, USA},
+series = {HSCC '25},
+url_pdf = {papers/wilson-hscc-2025.pdf},
+abstract = {
+Verifying the safety of latency-aware cyber-physical systems is both
+critical and challenging due to the interaction between continuous
+physical dynamics and discrete computational constraints. This paper
+introduces SOTERIA, a formal framework that integrates digital twins
+for ensuring safety in these systems. SOTERIA models both the physical
+dynamics and computational behavior, enabling integrated verification
+within a specific operating environment. This approach goes beyond
+conventional methods that either treat physical and computational
+aspects separately or rely on overly conservative worst-case
+analyses. By modeling hybrid dynamics alongside computational models
+and operating environments, SOTERIA verifies both functional and
+timing correctness. Leveraging established verification tools, SOTERIA
+determines whether end-to-end latencies meet formal specifications,
+bridging the gap between computational and physical requirements. We
+first introduce a simple example of a 1D adaptive cruise control
+system to illustrate its effectiveness. We then present findings from
+a case study using the F1Tenth racing car platform and the UPPAAL tool
+to demonstrate SOTERIA's effectiveness in realistic scenarios,
+enabling safety verification that was previously infeasible with
+conventional schedulability analyses. This work underscores the
+importance of an integrated verification approach for enhancing safety
+and reliability in autonomous systems.}
+}
+
 @inproceedings{wilson-memocode-2024,
 title = {Physics-Aware Mixed-Criticality Systems Design via End-to-End Verification of {CPS}},
 author = {Kurt Wilson and Abdullah Al Arafat and John Baugh and Ruozhou Yu and Zhishan Guo},
@@ -37,8 +145,8 @@ the proposed framework is reported.}
 @inproceedings{banach-icgt-2024,
 title = {The `Causality' Quagmire for Formalised Bond Graphs},
 author = {Banach, Richard and Baugh, John},
-editor = {Harmer, Russ and Kosiol, Jens},
 booktitle = {Graph Transformation},
+editor = {Harmer, Russ and Kosiol, Jens},
 year = {2024},
 publisher = {Springer Nature Switzerland},
 pages = {99-117},
