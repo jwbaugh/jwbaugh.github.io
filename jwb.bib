@@ -1,4 +1,115 @@
 
+@inproceedings{xu-setss-2026,
+author={Xu, Shengjie
+and Ganguli, Prateek
+and Zhu, Tingan
+and Gupta, Arkaprava
+and Ghosh, Bineet
+and Wilson, Kurt
+and Al Arafat, Abdullah
+and Baugh, John
+and Guo, Zhishan
+and Berg, Benjamin
+and Duggirala, Parasara Sridhar
+and Chakraborty, Samarjit},
+editor = {Bowen, Jonathan P. and Turrini, Andrea},
+title = {Building Safe Autonomous Systems Using Imperfect Components},
+booktitle = {Engineering Trustworthy Software Systems},
+year = {2026},
+publisher = {Springer Nature Singapore},
+address = {Singapore},
+pages = {213-286},
+url_pdf = {papers/xu-setss-2026},
+abstract = {
+Modern autonomous systems are composed of interacting components for
+control, scheduling, and learning, each operating under practical
+limitations such as timing uncertainty and imperfect
+perception. Traditional design and verification approaches aim for
+component-level perfection, an assumption that is increasingly
+untenable for complex systems. This paper advocates a shift toward
+quantitative, system-level safety that explicitly accounts for
+imperfect components and characterizes how their combined effects
+impact closed-loop behavior. We introduce safety metrics based on
+trajectory deviation and reachable set expansion, develop methods to
+check and synthesize safe schedules under deadline misses, and extend
+the framework to learning-enabled systems via edge-cloud control and
+safety-driven resource allocation. Together, these results demonstrate
+how safe autonomous systems can be systematically designed without
+requiring their individual components to be perfect.}
+}
+
+@inproceedings{baugh-festschrift-2026,
+author = {John Baugh and Richard Banach and Eunsuk Kang},
+title  = {Structure as Semantics: Impedance Modeling and Retrenchment in Cyber-Physical Systems},
+bookTitle = {Rigorous Methods in Theory and Practice: Essays Dedicated to Egon B{\"o}rger on the Occasion of His 80th Birthday},
+editor = {Raschke, Alexander and Riccobene, Elvinia and Schewe, Klaus-Dieter and Thalheim, Bernhard},
+publisher = {Springer Nature Switzerland},
+address = {Cham},
+pages = {249-272},
+year = {2026},
+doi = {10.1007/978-3-032-24494-9_12},
+url_pdf  = {papers/baugh-festschrift-2026},
+abstract = {
+We address a gap in CPS verification: current methods focus on
+temporal behavior but give little support for reasoning about physical
+structure and its interface guarantees. We render structure as first
+class by using impedance as the interface semantics, so models from
+different formalisms can be compared on equal terms and design steps
+judged by their boundary effect. This algebraic view suits state-based
+tools, enabling reasoning about physics without solving differential
+equations. We mechanize the approach in Alloy, deriving composition
+theorems for series-parallel networks and recovering standard circuit
+laws. A case study shows how impedance-based contracts support
+stepwise design via retrenchment, with bounded approximations that
+preserve boundary behavior. The method applies across physical
+domains, providing a uniform interface semantics for CPS models and
+tools.}
+}
+
+@article{wu-fse-2026,
+author = {Wu, Yinghao and Zhang, Miaomiao and Song, Fu and Baugh, John},
+title = {{SmartIFSyn}: Automated Information Flow Security Policy Synthesis for Smart Contracts},
+year = {2026},
+issue_date = {July 2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {3},
+number = {FSE},
+doi = {10.1145/3797123},
+url_pdf = {papers/wu-fse-2026},
+abstract = {
+Smart contracts have achieved significant success, however, their
+security remains a long-standing challenge. The immutability and
+transparency of smart contracts require establishing a strong
+mechanism to prevent private leakage and trusted data tampering. Apart
+from traditional logic and code-level vulnerabilities arising from
+insufficient control over contract variables and function parameters,
+smart contracts may store private-dependent information in blockchain
+records, which is a critical type of vulnerability, but often
+overlooked in existing security analysis. In this paper, we present an
+automated approach for synthesizing security policies, named
+SmartIFSyn, to eliminate information flow vulnerabilities in smart
+contracts. We formalize the semantics of Solidity, the most widely
+used smart contract language, and analyze information flow security of
+Solidity smart contracts from two perspectives: local-variable
+security and global-interaction security. We present a type system to
+guide the elimination of local-variable vulnerabilities by inferring a
+policy and resort to constraint solving to synthesize a desired policy
+in case that the type system fails. The policy ensures both
+local-variable and global-interaction security while it is maximally
+aligned with user preference. Furthermore, the policy can be
+subsequently converted into enforceable specifications. We implement
+our approach in a tool and evaluate it on 17,160 real-world Ethereum
+smart contracts. The experimental results demonstrate the efficacy of
+our approach, e.g., detected 243 vulnerabilities in 223 real-world
+Ethereum smart contracts.},
+journal = {Proc. ACM Softw. Eng.},
+month = jun,
+articleno = {FSE028},
+numpages = {23},
+keywords = {Constraint solving, Formal semantics, Information flow security, Smart contracts, Solidity, Type inference}
+}
+
 @inproceedings{altuntas-vss-2025,
 author = {Alper Altuntas and Allison H. Baker and John Baugh and Ganesh Gopalakrishnan and Stephen Siegel},
 title = {Specification and Verification for Climate Modeling: Formalization Leading to Impactful Tooling},
@@ -143,7 +254,7 @@ the proposed framework is reported.}
 }
 
 @inproceedings{banach-icgt-2024,
-title = {The `Causality' Quagmire for Formalised Bond Graphs},
+title = {The `Causality' Quagmire for Formalised Bond Graphs},
 author = {Banach, Richard and Baugh, John},
 booktitle = {Graph Transformation},
 editor = {Harmer, Russ and Kosiol, Jens},
